@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\project;
+use App\Services\Twitter;
 
 class ProjectsController extends Controller
 {
@@ -14,8 +15,10 @@ class ProjectsController extends Controller
     return view('projects.index', compact('projects'));
   }
 
-  public function show(Project $project) {
+  public function show(Project $project, Twitter $twitter) {
     //$project = Project::findorFail($id);
+    dd($twitter);
+
     return view('projects.show', compact('project'));
   }
 

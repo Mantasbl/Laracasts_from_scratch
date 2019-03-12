@@ -11,6 +11,10 @@
 |
 */
 
+app()->singleton('App\Services\Twitter', function () {
+  return new \App\Services\Twitter('Twitter api key');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
